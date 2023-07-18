@@ -10,6 +10,9 @@ public class BeamSplitter : BaseObject
     public List<ShootLaser> ShootLaserExits = new List<ShootLaser>();
 
 
+    public LaserEvents LaserEventType;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -18,12 +21,17 @@ public class BeamSplitter : BaseObject
             //shootLaser.setLaser(incomingLaserBeam);
             shootLaser.referenceLaser = incomingLaserBeam;
             shootLaser.on = isOn;
+
+
         }
+        GuideManager.Instance.addEvent(LaserEventType, isOn);
 
         isOn = false;
-        //referenceLaser = null;
+
 
     }
+
+
 
 
 

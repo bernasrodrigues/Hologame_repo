@@ -8,15 +8,22 @@ public class ExpanderObject : BaseObject
     public LaserBeam incomingLaserBeam;        // laser Beam that touches the object
     public ShootLaser ExpanderExit;
 
+    public LaserEvents LaserEventType;
+
 
     // Update is called once per frame
     void Update()
     {
         ExpanderExit.referenceLaser = incomingLaserBeam;
         ExpanderExit.on = isOn;
+        GuideManager.Instance.addEvent(LaserEventType, isOn);
+
+        print(isOn);
+
         isOn = false;
 
     }
+
 
 
 

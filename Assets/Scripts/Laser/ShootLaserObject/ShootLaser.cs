@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.Events;
 
 public class ShootLaser : MonoBehaviour
 {
@@ -23,8 +22,7 @@ public class ShootLaser : MonoBehaviour
     //Handle Layers
     public string[] layersItCanCollide;     // List the layers the laser can collide with
 
-
-
+    public LaserEvents LaserEventType;
 
     [SerializeField] private bool loggerOn = false;
     private Logger logger;
@@ -63,24 +61,11 @@ public class ShootLaser : MonoBehaviour
 
     }
 
-    /*
-    For LaserSource type
-                reference laser =null
-                lineRenderer
-
-    For Object type
-                reference laser 
-                lineRenderer = null
-
-     For Expander type
-                reference laser 
-                lineRenderer
-    */
-
-
     public void button()
     {
         on = !on;
+
+        GuideManager.Instance.addEvent(LaserEventType, on);        
     }
 
     public void SetPassedThroughtPinhole(bool passed)

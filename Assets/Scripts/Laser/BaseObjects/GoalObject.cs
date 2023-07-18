@@ -30,9 +30,10 @@ public class GoalObject : BaseObject
         CheckTimeCountDown();
         CheckCreateCopy();
 
-        isTouching = false;
-    }
 
+        isTouching = false;
+
+    }
 
 
     public void CheckTimeCountDown()
