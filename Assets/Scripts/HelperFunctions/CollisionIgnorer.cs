@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CollisionIgnorer : MonoBehaviour
 {
     public Collider mirroHolderCollider;
-
+    public GameObject startIgnore;
 
     public void Start()
     {
@@ -14,6 +14,17 @@ public class CollisionIgnorer : MonoBehaviour
 
         socket.onSelectEntered.AddListener(SocketEnter);
         socket.onSelectExited.AddListener(SocketExit);
+
+
+        if (startIgnore != null)
+        {
+            Collider[] colliders = startIgnore.GetComponentsInChildren<Collider>();
+            foreach (Collider c in colliders)
+            {
+                Physics.IgnoreCollision(c, mirroHolderCollider, true);
+            }
+        }
+
     }
 
 
