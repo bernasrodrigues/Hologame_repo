@@ -18,8 +18,6 @@ public class ExpanderObject : BaseObject
         ExpanderExit.on = isOn;
         GuideManager.Instance.addEvent(LaserEventType, isOn);
 
-        print(isOn);
-
         isOn = false;
 
     }
