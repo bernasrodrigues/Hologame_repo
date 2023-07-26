@@ -1,21 +1,22 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
-public class SoundManager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public static SoundManager instance;
+    public static AudioManager instance;
 
     public float masterVolume = 1.0f;  // Master volume (0.0 to 1.0)
     public float musicVolume = 1.0f;   // Music volume (0.0 to 1.0)
     public float sfxVolume = 1.0f;     // Sound effects volume (0.0 to 1.0)
 
+    public float maxPitch = 1.1f;
+    public float minPitch = 0.9f;
 
-    // Random pitch adjustment range.
-    public float LowPitchRange = .95f;
-    public float HighPitchRange = 1.05f;
+
+
+    private HashSet<AudioSource> audioSourceSet = new HashSet<AudioSource>();
+
+
 
     private void Awake()
     {
@@ -35,7 +36,12 @@ public class SoundManager : MonoBehaviour
         LoadSoundSettings();
     }
 
-    #region Sets
+    #region sets
+    public void AddToSet(AudioSource audioSource)
+    {
+        audioSourceSet.Add(audioSource);
+    }
+
     public void SetMasterVolume(float volume)
     {
         masterVolume = Mathf.Clamp01(volume);
@@ -55,17 +61,17 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
-
     private void ApplySoundSettings()
     {
-        // Apply sound settings to all audio sources in the scene
-
-        // Find all AudioSources in the scene
-        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
-
         // Apply sound settings to each AudioSource
-        foreach (AudioSource audioSource in audioSources)
+        foreach (AudioSource audioSource in audioSourceSet)
         {
+            if (audioSource == null)
+            {
+                audioSourceSet.Remove(audioSource);
+                continue;
+            }
+
             switch (audioSource.tag)
             {
                 case "Music":
@@ -84,6 +90,41 @@ public class SoundManager : MonoBehaviour
         SaveSoundSettings();
     }
 
+
+
+    public void PlayAudioSource(AudioSource audioSource , float audioSourceVolume = 1f)
+    {
+        ApplySoundSettings(audioSource, audioSourceVolume);
+        audioSourceSet.Add(audioSource);
+        audioSource.PlayOneShot(audioSource.clip);
+
+
+    }
+
+
+    void ApplySoundSettings(AudioSource audioSource, float audioSourceVolume)
+    {
+
+        switch (audioSource.tag)
+        {
+            case "Music":
+                audioSource.volume = (masterVolume * musicVolume) * audioSourceVolume;
+                break;
+            case "SFX":
+                audioSource.volume = (masterVolume * sfxVolume) * audioSourceVolume;
+                audioSource.pitch = Random.Range(minPitch, maxPitch);
+                break;
+            default:
+                Debug.LogWarning("AudioSource with tag '" + audioSource.tag + "' is not recognized.");
+                audioSource.volume = (masterVolume * musicVolume) * audioSourceVolume;
+                break;
+        }
+
+    }
+
+
+
+    #region Save/Load
     private void SaveSoundSettings()
     {
         PlayerPrefs.SetFloat("MasterVolume", masterVolume);
@@ -106,4 +147,5 @@ public class SoundManager : MonoBehaviour
         // Apply the loaded sound settings
         ApplySoundSettings();
     }
+    #endregion
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class QuestionBoardManager : MonoBehaviour
 {
     public QuestionUI questionUI;
@@ -143,3 +144,4 @@ public class QuestionBoardManager : MonoBehaviour
         logger.Log("Right " + rightAnswers + " questions. Triggering Correct function.");
     }
 }
+*/
