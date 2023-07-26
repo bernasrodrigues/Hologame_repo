@@ -14,7 +14,7 @@ public class QuestionSelector : MonoBehaviour
 
     public void SelectAnswer()
     {
-        answerAdd = 0.5f;
+        answerAdd = 1f;
     }
 
     public void DeselectAnswer()
@@ -28,7 +28,7 @@ public class QuestionSelector : MonoBehaviour
     private void Update()
     {
         print(answerAdd);
-        answerSlider.value += answerAdd;
+        answerSlider.value += answerAdd * Time.deltaTime;
 
 
         if (answerSlider.value >= 100)
