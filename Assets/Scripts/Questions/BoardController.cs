@@ -23,14 +23,14 @@ public class BoardController : MonoBehaviour
     public int maxQuestionsInSession = 5;                   // maimum number of questions a player is given is each scene
 
 
-    [ReadOnly]
+    //[ReadOnly]
     public int rightAnswers = 0;
-    [ReadOnly]
+    //[ReadOnly]
     public int failedAnswers = 0;
-    [ReadOnly]
+    //[ReadOnly]
     public int answeredQuestions = 0;
 
-    [ReadOnly]
+    //[ReadOnly]
     public QuestionData activeQuestion;
 
     private bool loggerOn = false;

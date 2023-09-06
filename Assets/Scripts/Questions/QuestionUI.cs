@@ -38,7 +38,6 @@ public class QuestionUI : MonoBehaviour
         }
     }
 
-
     private void cleanUp()
     {
         gameObject.SetActive(false);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+/*
 public class ReadOnlyAttribute : PropertyAttribute
 {
 
@@ -26,3 +27,5 @@ public class ReadOnlyDrawer : PropertyDrawer
         GUI.enabled = true;
     }
 }
+
+*/
