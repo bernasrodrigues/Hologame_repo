@@ -27,7 +27,7 @@ public class QuestionSelector : MonoBehaviour
 
     private void Update()
     {
-        print(answerAdd);
+        //print(answerAdd);
         answerSlider.value += answerAdd * Time.deltaTime;
 
 

@@ -18,6 +18,9 @@ public class GoalObject : BaseObject
     public CheckObjectInFront objectDetector;
 
 
+    public GameObject virtualPlane;
+
+
     public override void HandleTouchLaser(LaserBeam laserBeam)
     {
         isTouching = true;
@@ -70,6 +73,12 @@ public class GoalObject : BaseObject
     }
 
 
+    public void Reveal()
+    {
+        virtualPlane.gameObject.SetActive(true);
+
+
+    }
 
 
 
