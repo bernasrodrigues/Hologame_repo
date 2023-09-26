@@ -3008,6 +3008,7 @@ MonoBehaviour:
   refractionIndex: 1
   isOn: 0
   ExpanderExit: {fileID: 1780974603}
+  LaserEventType: 0
 --- !u!65 &259690473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4146,7 +4147,9 @@ MonoBehaviour:
   on: 0
   shootLaserType: 2
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &357645334
 MeshRenderer:
@@ -5743,6 +5746,7 @@ MonoBehaviour:
   ShootLaserExits:
   - {fileID: 1813789601}
   - {fileID: 2015975901}
+  LaserEventType: 0
 --- !u!65 &442478891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6073,10 +6077,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3360becf7bc33c42be29002f36a8d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDetector: {fileID: 870292852}
   targetPosition: {fileID: 1397904178}
   playerCamera: {fileID: 1306359760}
   RendererCamera: {fileID: 1665554915}
+  debugCheckObjectInFront: {fileID: 0}
 --- !u!1001 &454184029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7463,7 +7467,9 @@ MonoBehaviour:
   on: 0
   shootLaserType: 2
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &536985596
 MeshRenderer:
@@ -9479,7 +9485,9 @@ MonoBehaviour:
   on: 1
   shootLaserType: 0
   lineRenderer: {fileID: 633848422}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &633848424
 MeshRenderer:
@@ -10200,6 +10208,7 @@ MonoBehaviour:
   ShootLaserExits:
   - {fileID: 811009373}
   - {fileID: 1867257941}
+  LaserEventType: 0
 --- !u!65 &643643775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11673,6 +11682,7 @@ MonoBehaviour:
   refractionIndex: 1
   isOn: 0
   ExpanderExit: {fileID: 357645333}
+  LaserEventType: 0
 --- !u!65 &739718530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12293,7 +12303,9 @@ MonoBehaviour:
   on: 1
   shootLaserType: 1
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &811009374
 MeshRenderer:
@@ -14803,7 +14815,9 @@ MonoBehaviour:
   on: 1
   shootLaserType: 0
   lineRenderer: {fileID: 1006972966}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!120 &1006972966
 LineRenderer:
@@ -18748,7 +18762,9 @@ MonoBehaviour:
   on: 0
   shootLaserType: 1
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &1329918828
 MeshRenderer:
@@ -19229,6 +19245,8 @@ MonoBehaviour:
   timeCount: 0
   objectCopyPlacer: {fileID: 447314272}
   createdHologram: 0
+  objectDetector: {fileID: 0}
+  virtualPlane: {fileID: 0}
 --- !u!65 &1361689193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19737,7 +19755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c1088549dddb24880f125ca95e5a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightsource: {fileID: 1819911032}
 --- !u!1 &1375019851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7201899073803265179, guid: e350a5d09c905114c86d89f4731448bf, type: 3}
@@ -25764,7 +25781,9 @@ MonoBehaviour:
   on: 0
   shootLaserType: 1
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &1776976419
 MeshRenderer:
@@ -25865,7 +25884,9 @@ MonoBehaviour:
   on: 0
   shootLaserType: 2
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &1780974604
 MeshRenderer:
@@ -26932,7 +26953,9 @@ MonoBehaviour:
   on: 1
   shootLaserType: 1
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &1813789602
 MeshRenderer:
@@ -27376,6 +27399,14 @@ PrefabInstance:
     - target: {fileID: 6252418184100948470, guid: 2967c4c1619c42c45abe25baea2b56d5, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 2.370358e-22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591817950181840691, guid: 2967c4c1619c42c45abe25baea2b56d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766208832466807341, guid: 2967c4c1619c42c45abe25baea2b56d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2967c4c1619c42c45abe25baea2b56d5, type: 3}
@@ -27835,7 +27866,9 @@ MonoBehaviour:
   on: 1
   shootLaserType: 1
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &1867257942
 MeshRenderer:
@@ -29731,6 +29764,7 @@ MonoBehaviour:
   refractionIndex: 1
   isOn: 0
   ExpanderExit: {fileID: 536985595}
+  LaserEventType: 0
 --- !u!65 &1976698086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30048,7 +30082,9 @@ MonoBehaviour:
   on: 1
   shootLaserType: 1
   lineRenderer: {fileID: 0}
+  power: 0
   layersItCanCollide: []
+  LaserEventType: 0
   loggerOn: 0
 --- !u!23 &2015975902
 MeshRenderer:
