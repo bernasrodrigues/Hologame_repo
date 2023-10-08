@@ -5,30 +5,21 @@ using UnityEngine;
 public class BeamSplitter : BaseObject
 {
 
-    public bool isOn = false;
-    public LaserBeam incomingLaserBeam = null;
     public List<ShootLaser> ShootLaserExits = new List<ShootLaser>();
 
 
-    public LaserEvents LaserEventType;
-
-
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
+
+
         foreach (ShootLaser shootLaser in ShootLaserExits)
         {
-            //shootLaser.setLaser(incomingLaserBeam);
             shootLaser.referenceLaser = incomingLaserBeam;
-            shootLaser.on = isOn;
-
-
+            shootLaser.on = isHitByRay;
         }
-        GuideManager.Instance.addEvent(LaserEventType, isOn);
-
-        isOn = false;
-
-
     }
 
 
@@ -45,8 +36,11 @@ public class BeamSplitter : BaseObject
             }
         }
 
-        isOn = true;
-        this.incomingLaserBeam = incomingLaserBeam;
+
+
+        base.HandleTouchLaser(incomingLaserBeam);
     }
+
+
 
 }

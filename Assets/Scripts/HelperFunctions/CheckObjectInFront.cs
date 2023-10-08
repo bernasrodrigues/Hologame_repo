@@ -142,7 +142,7 @@ public class CheckObjectInFront : MonoBehaviour
     
     private bool CheckIfIlumunatedObject(BaseObject baseObject)
     {
-        if (baseObject.iluminated)
+        if (baseObject.isHitByRay)
         {
             return true;
         }

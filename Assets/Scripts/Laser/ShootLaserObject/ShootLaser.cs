@@ -14,23 +14,19 @@ public class ShootLaser : MonoBehaviour
     public LaserBeam referenceLaser;
     public LineRenderer lineRenderer;
 
-
     public float power;
-
-
 
     //Handle Layers
     public string[] layersItCanCollide;     // List the layers the laser can collide with
 
     public LaserEvents LaserEventType;
 
-    [SerializeField] private bool loggerOn = false;
-    private Logger logger;
-
 
     // Update is called once per frame
     protected virtual void Update()
     {
+
+
         if (!on)        // check if turned on, if not on ignore
         {
             if (laserBeam != null)
@@ -54,7 +50,8 @@ public class ShootLaser : MonoBehaviour
                                     referenceBeam: referenceLaser,
                                     referenceLineRenderer: lineRenderer,
                                     shootLaserType: shootLaserType,
-                                    layerMask: layersItCanCollide);
+                                    layerMask: layersItCanCollide,
+                                    power: power);
             laserBeam.Update(referenceLaser);
         }
 
@@ -65,11 +62,17 @@ public class ShootLaser : MonoBehaviour
     {
         on = !on;
 
-        GuideManager.Instance.addEvent(LaserEventType, on);        
     }
 
     public void SetPassedThroughtPinhole(bool passed)
     {
         if (laserBeam != null) laserBeam.passedPinhole = passed;
+    }
+
+
+
+    public void SetPower(float power)
+    {
+        this.power = power;
     }
 }

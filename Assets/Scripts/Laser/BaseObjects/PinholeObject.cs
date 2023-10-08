@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PinholeObject : BaseObject
 {
-    public bool isOn = false;
-    public LaserBeam incomingLaserBeam = null;
     public ShootLaser PinholeExit;
 
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
+
         PinholeExit.referenceLaser = incomingLaserBeam;
-        PinholeExit.on = isOn;
-        isOn = false;
+        PinholeExit.on = isHitByRay;
         PinholeExit.SetPassedThroughtPinhole(true);
     }
 
@@ -27,10 +27,8 @@ public class PinholeObject : BaseObject
         {
             return;
         }
-    
 
-        isOn = true;
-        this.incomingLaserBeam = incomingLaserBeam;
+        base.HandleTouchLaser(incomingLaserBeam);
     }
 
 

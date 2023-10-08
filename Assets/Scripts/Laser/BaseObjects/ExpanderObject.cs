@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class ExpanderObject : BaseObject
 {
-    public bool isOn = false;
-    public LaserBeam incomingLaserBeam;        // laser Beam that touches the object
     public ShootLaser ExpanderExit;
-
-    public LaserEvents LaserEventType;
 
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        ExpanderExit.referenceLaser = incomingLaserBeam;
-        ExpanderExit.on = isOn;
-        GuideManager.Instance.addEvent(LaserEventType, isOn);
+        base.Update();
 
-        isOn = false;
+        ExpanderExit.referenceLaser = incomingLaserBeam;
+        ExpanderExit.on = isHitByRay;
 
     }
 
@@ -33,8 +28,8 @@ public class ExpanderObject : BaseObject
         }
 
 
-        isOn = true;
-        this.incomingLaserBeam = incomingLaserBeam;
+
+        base.HandleTouchLaser(incomingLaserBeam);
     }
 
 }

@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class BaseObject : MonoBehaviour
 {
-    public bool iluminated = false;
+    public bool isHitByRay = false;
+    public float rayRunsOutTimer;
+    public LaserBeam incomingLaserBeam;        // laser Beam that touches the object
+
+
 
 
     public ReflectiveType reflective = ReflectiveType.nonReflective;
@@ -12,9 +16,26 @@ public class BaseObject : MonoBehaviour
 
 
 
+    public virtual void Update()
+    {
+        rayRunsOutTimer -= Time.deltaTime;
 
+        if (rayRunsOutTimer <= 0)   //check if time run out, if it has, no longer being hit by ray
+        {
+            isHitByRay = false;
+            rayRunsOutTimer = 0;
+            incomingLaserBeam = null;
+        }
+    }
+
+
+
+    // if hit toggle being hit and set timer until not iluminated
     public virtual void HandleTouchLaser(LaserBeam laserBeam)
     {
+        isHitByRay = true;
+        rayRunsOutTimer = WorldInfo.Instance.RayRunsOutTime;
+        this.incomingLaserBeam = laserBeam;
 
     }
 

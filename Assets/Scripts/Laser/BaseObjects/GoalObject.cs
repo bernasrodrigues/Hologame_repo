@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GoalObject : BaseObject
 {
-    public bool isTouching;
     public float timeOut = 0.3f;
     public float timeOutCount;
     public float timeTillFull = 3f;
@@ -21,27 +20,28 @@ public class GoalObject : BaseObject
     public GameObject virtualPlane;
 
 
-    public override void HandleTouchLaser(LaserBeam laserBeam)
+
+    public override void Update()
     {
-        isTouching = true;
-    }
+        base.Update();
 
 
 
-    public void Update()
-    {
         CheckTimeCountDown();
         CheckCreateCopy();
 
-
-        isTouching = false;
-
     }
+
+    public override void HandleTouchLaser(LaserBeam laserBeam)
+    {
+        base.HandleTouchLaser(laserBeam);
+    }
+
 
 
     public void CheckTimeCountDown()
     {
-        if (isTouching)
+        if (isHitByRay)
         {
             timeCount = Math.Min(timeCount + Time.deltaTime, timeTillFull);             // what value is smaller timetillfull or the timecount (no point in making the time count larger than time full)
         }

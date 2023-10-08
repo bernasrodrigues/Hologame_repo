@@ -5,6 +5,11 @@ using UnityEngine;
 public class WorldInfo : MonoBehaviour
 {
     public float refraction_index = 1.0f;
+
+    public float RayRunsOutTime = 2f;
+
+
+    
     public Transform playerCameraTransform;         // not used
 
 
