@@ -35,9 +35,5 @@ public class LaserCommandPowerAdjuster : MonoBehaviour
 
         laserCommandCanvasAlphaAdjuster.adjustSlider();
 
-
-
-        Debug.Log(power);
-
     }
 }

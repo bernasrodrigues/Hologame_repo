@@ -4149,6 +4149,10 @@ MonoBehaviour:
   shootLaserType: 2
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &357645334
@@ -4997,7 +5001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 122
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6353,7 +6357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6242851353689079636, guid: f9da24840c60a814295b88e6319d9f9c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6242851353689079636, guid: f9da24840c60a814295b88e6319d9f9c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7226,7 +7230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &525605884
 Transform:
   m_ObjectHideFlags: 0
@@ -7469,6 +7473,10 @@ MonoBehaviour:
   shootLaserType: 2
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &536985596
@@ -9488,6 +9496,10 @@ MonoBehaviour:
   shootLaserType: 0
   lineRenderer: {fileID: 633848422}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &633848424
@@ -12304,6 +12316,10 @@ MonoBehaviour:
   shootLaserType: 1
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &811009374
@@ -13406,7 +13422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 262.09998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64, type: 3}
       propertyPath: m_SizeDelta.y
@@ -13414,7 +13430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 147.04999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8107108474233336363, guid: 49e2fbde9521b4341879174df5a51b64, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -14816,6 +14832,10 @@ MonoBehaviour:
   shootLaserType: 0
   lineRenderer: {fileID: 1006972966}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!120 &1006972966
@@ -15118,7 +15138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 262.09998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de, type: 3}
       propertyPath: m_SizeDelta.y
@@ -15126,7 +15146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 147.04999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 781630663273105846, guid: fcac0c3f142ea3742a0565751dec41de, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -17419,6 +17439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207700719}
   - component: {fileID: 1207700718}
+  - component: {fileID: 1207700720}
   m_Layer: 0
   m_Name: BakedBounceLight
   m_TagString: Untagged
@@ -17503,6 +17524,26 @@ Transform:
   m_Father: {fileID: 1189512081}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 57.724003, y: -46.7, z: -22.179}
+--- !u!114 &1207700720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207700717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1230061734
 GameObject:
   m_ObjectHideFlags: 0
@@ -18237,7 +18278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1277533718
 Transform:
   m_ObjectHideFlags: 0
@@ -18763,6 +18804,10 @@ MonoBehaviour:
   shootLaserType: 1
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &1329918828
@@ -22014,6 +22059,10 @@ PrefabInstance:
     - target: {fileID: 6178682813634238645, guid: eb062ec49f40b17408a5dc25961a60ef, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358011745019241534, guid: eb062ec49f40b17408a5dc25961a60ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6364492114307050442, guid: eb062ec49f40b17408a5dc25961a60ef, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25784,6 +25833,10 @@ MonoBehaviour:
   shootLaserType: 1
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &1776976419
@@ -25886,6 +25939,10 @@ MonoBehaviour:
   shootLaserType: 2
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &1780974604
@@ -26955,6 +27012,10 @@ MonoBehaviour:
   shootLaserType: 1
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &1813789602
@@ -27778,6 +27839,10 @@ MonoBehaviour:
   shootLaserType: 1
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &1867257942
@@ -29993,6 +30058,10 @@ MonoBehaviour:
   shootLaserType: 1
   lineRenderer: {fileID: 0}
   power: 0
+  timer: -1
+  RemaingTimeUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   layersItCanCollide: []
   LaserEventType: 0
 --- !u!23 &2015975902

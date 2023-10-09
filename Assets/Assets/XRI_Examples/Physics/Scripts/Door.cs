@@ -73,6 +73,8 @@ namespace UnityEngine.XR.Content.Interaction
             m_DoorJoint.limits = m_ClosedDoorLimits;
             m_KeyKnob.SetActive(false);
             m_Closed = true;
+
+
         }
 
         void Update()
@@ -167,5 +169,7 @@ namespace UnityEngine.XR.Content.Interaction
             m_KnobInteractor = null;
             m_KnobInteractorAttachTransform = null;
         }
+
+        
     }
 }
