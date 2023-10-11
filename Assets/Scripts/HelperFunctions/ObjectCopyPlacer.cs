@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ObjectCopyPlacer : MonoBehaviour
 {
@@ -54,8 +55,7 @@ public class ObjectCopyPlacer : MonoBehaviour
         // Create copies of the detected objects
         foreach ((GameObject, Vector3) detectedObject in detectedObjects)
         {
-            print(detectedObject.Item1.gameObject + " " + detectedObject.Item2);
-            print(targetPosition);
+
 
             GameObject copy = Instantiate(detectedObject.Item1, targetPosition.position, targetPosition.rotation );
 
@@ -75,8 +75,33 @@ public class ObjectCopyPlacer : MonoBehaviour
             }
 
 
+
+
+
+            foreach (Component component in copy.GetComponents<Component>())
+            {
+                // Check if it's not a MeshRenderer or MeshFilter
+                if (!(component is MeshRenderer || component is MeshFilter || component is Transform))
+                {
+                    // Add the component to the list of components to destroy
+                    DestroyImmediate(component);
+                }
+            }
+
+
+
+
+
             copy.transform.position += detectedObject.Item2;
-            copiedObjects.Add(copy);
+            
+
+
+
+            
+            
+            
+            
+            copiedObjects.Add(copy);            // not used
 
             //RendererCamera.transform.SetParent(playerCamera.transform.parent);
         }
