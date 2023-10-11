@@ -5,7 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CollisionIgnorer : MonoBehaviour
 {
-    public Collider mirroHolderCollider;
+    public Collider[] mirrorHolderColliders;
+    public GameObject mirrorHolderCollidersGameObject;
     public GameObject startIgnore;
 
     public void Start()
@@ -16,12 +17,18 @@ public class CollisionIgnorer : MonoBehaviour
         socket.onSelectExited.AddListener(SocketExit);
 
 
+        mirrorHolderColliders = mirrorHolderCollidersGameObject.transform.GetComponentsInChildren<Collider>();
+
+
         if (startIgnore != null)
         {
             Collider[] colliders = startIgnore.GetComponentsInChildren<Collider>();
             foreach (Collider c in colliders)
             {
-                Physics.IgnoreCollision(c, mirroHolderCollider, true);
+                foreach (Collider mirrorCollider in mirrorHolderColliders)
+                {
+                    Physics.IgnoreCollision(c, mirrorCollider, true);
+                }
             }
         }
 
@@ -33,7 +40,10 @@ public class CollisionIgnorer : MonoBehaviour
         Collider[] colliders = obj.GetComponentsInChildren<Collider>();
         foreach (Collider c in colliders)
         {
-            Physics.IgnoreCollision(c, mirroHolderCollider, true);
+            foreach (Collider mirrorCollider in mirrorHolderColliders)
+            {
+                Physics.IgnoreCollision(c, mirrorCollider, true);
+            }
         }
 
     }
@@ -43,7 +53,10 @@ public class CollisionIgnorer : MonoBehaviour
         Collider[] colliders = obj.GetComponentsInChildren<Collider>();
         foreach (Collider c in colliders)
         {
-            Physics.IgnoreCollision(c, mirroHolderCollider, false);
+            foreach (Collider mirrorCollider in mirrorHolderColliders)
+            {
+                Physics.IgnoreCollision(c, mirrorCollider, false);
+            }
         }
     }
 }

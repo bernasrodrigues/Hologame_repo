@@ -99,7 +99,7 @@ public class CheckObjectInFront : MonoBehaviour
             GameObject obj = GetMainObject(collider);
             if (obj != null)
             {
-                Vector3 vectorToObject = obj.transform.position - this.transform.position;
+                Vector3 vectorToObject = obj.transform.position - this.transform.parent.position;
                 detectedObjects.Add((obj , vectorToObject));
             }
         }

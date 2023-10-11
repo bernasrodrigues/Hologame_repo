@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4375225604828255683}
   - component: {fileID: 799449497023568486}
   - component: {fileID: 3241677337999486636}
+  - component: {fileID: 3624700871574874182}
   - component: {fileID: 4268662566081147476}
+  - component: {fileID: 3800151198104957081}
   m_Layer: 0
-  m_Name: ObjectHolder_Visuals
+  m_Name: ObjectHolderVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +86,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3624700871574874182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034165530881101689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7566b73621eaa49ba12229a676a13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHitByRay: 0
+  rayRunsOutTimer: 0
+  objectInfo: {fileID: 0}
+  reflective: 0
+  refractionIndex: 1
 --- !u!65 &4268662566081147476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95,8 +114,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.015, y: 0.015, z: 0.025}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.017315632, y: 0.017929982, z: 0.0028075706}
+  m_Center: {x: 0, y: 0, z: -0.011265692}
+--- !u!65 &3800151198104957081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034165530881101689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0057852236, y: 0.005540204, z: 0.019785868}
+  m_Center: {x: 3.6161265e-11, y: 1.808064e-11, z: -0.00015167137}
 --- !u!1 &4268662565106284431
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268662565326997508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.094, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1132, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -364,8 +396,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.111173585, y: 0.1730687, z: 0.16854727}
+  m_Center: {x: 0, y: 0.015755147, z: 0}
 --- !u!114 &4268662565326997506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37ae64a9bebb8449bebf70966c97059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirroHolderCollider: {fileID: 4268662566081147476}
+  mirrorHolderColliders: []
+  mirrorHolderCollidersGameObject: {fileID: 4034165530881101689}
   startIgnore: {fileID: 0}
 --- !u!1 &4268662565407563633
 GameObject:
@@ -507,7 +540,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4268662565522615391}
-  - component: {fileID: 4268662565522615387}
   - component: {fileID: 4268662565522615386}
   - component: {fileID: 4268662565522615388}
   - component: {fileID: 4268662565522615389}
@@ -525,7 +557,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268662565522615390}
-  m_LocalRotation: {x: -0.000000063079, y: 0.7071209, z: 0.00000012973311, w: -0.70709276}
+  m_LocalRotation: {x: 0, y: 0.70711935, z: -0, w: -0.7070942}
   m_LocalPosition: {x: 0.16469996, y: -0.07664609, z: 0.1500001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -535,23 +567,7 @@ Transform:
   - {fileID: 4268662566823602131}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!114 &4268662565522615387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268662565522615390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7566b73621eaa49ba12229a676a13b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isHitByRay: 0
-  rayRunsOutTimer: 0
-  reflective: 0
-  refractionIndex: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 269.998, z: 0}
 --- !u!54 &4268662565522615386
 Rigidbody:
   m_ObjectHideFlags: 0

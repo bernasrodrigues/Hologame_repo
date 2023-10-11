@@ -633,5 +633,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHitByRay: 0
   rayRunsOutTimer: 0
+  objectInfo: {fileID: 0}
   reflective: 0
   refractionIndex: 1

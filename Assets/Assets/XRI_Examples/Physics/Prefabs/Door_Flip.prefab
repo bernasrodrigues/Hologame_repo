@@ -25,7 +25,8 @@ Transform:
   m_GameObject: {fileID: 1308265130741877079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.05, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4419185173551876180}
   m_Father: {fileID: 0}
@@ -104,11 +105,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5079b45197d4f31468ef1ef2f528fb1c, type: 3}
---- !u!4 &4419185173551876180 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5079b45197d4f31468ef1ef2f528fb1c, type: 3}
-  m_PrefabInstance: {fileID: 4242004907995361215}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &502328958617599460 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4334153322912928347, guid: 5079b45197d4f31468ef1ef2f528fb1c, type: 3}
@@ -155,7 +151,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1.0702711, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.37980777, y: 2.1593924, z: -0.00021080574}
+  m_ConnectedAnchor: {x: 6.8618045, y: 4.1572123, z: -11.53321}
   m_UseSpring: 1
   m_Spring:
     spring: 10
@@ -179,3 +175,8 @@ HingeJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!4 &4419185173551876180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5079b45197d4f31468ef1ef2f528fb1c, type: 3}
+  m_PrefabInstance: {fileID: 4242004907995361215}
+  m_PrefabAsset: {fileID: 0}

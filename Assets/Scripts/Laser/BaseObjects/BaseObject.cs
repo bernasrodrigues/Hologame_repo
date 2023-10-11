@@ -8,6 +8,7 @@ public class BaseObject : MonoBehaviour
     public float rayRunsOutTimer;
     public LaserBeam incomingLaserBeam;        // laser Beam that touches the object
 
+    public ObjectInfo objectInfo;
 
 
 
