@@ -18,35 +18,19 @@ public class ObjectCopyPlacer : MonoBehaviour
     public CheckObjectInFront debugCheckObjectInFront;
 
 
-    private static ObjectCopyPlacer instance;
-    private ObjectCopyPlacer() { } // Private constructor to prevent instantiation.
-    public static ObjectCopyPlacer Instance
+    public static ObjectCopyPlacer Instance { get; private set; }
+    private void Awake()
     {
-        get
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
         {
-            if (instance == null)
-            {
-                instance = new ObjectCopyPlacer();
-            }
-            return instance;
+            Destroy(this);
         }
-    }
-
-
-
-    private void Start()
-    {
-        /*
-        // Get the detected objects from the ObjectDetector script
-        if (objectDetector != null)
+        else
         {
-            detectedObjects = objectDetector.GetDetectedObjects();
+            Instance = this;
         }
-
-        */
-
-
-
     }
 
 
@@ -70,7 +54,10 @@ public class ObjectCopyPlacer : MonoBehaviour
         // Create copies of the detected objects
         foreach ((GameObject, Vector3) detectedObject in detectedObjects)
         {
-            GameObject copy = Instantiate(detectedObject.Item1.gameObject, targetPosition.position, targetPosition.rotation );
+            print(detectedObject.Item1.gameObject + " " + detectedObject.Item2);
+            print(targetPosition);
+
+            GameObject copy = Instantiate(detectedObject.Item1, targetPosition.position, targetPosition.rotation );
 
 
             

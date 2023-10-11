@@ -20,6 +20,13 @@ public class GoalObject : BaseObject
     public GameObject virtualPlane;
 
 
+    public void Start()
+    {
+        objectCopyPlacer = ObjectCopyPlacer.Instance;
+    }
+
+
+
 
     public override void Update()
     {

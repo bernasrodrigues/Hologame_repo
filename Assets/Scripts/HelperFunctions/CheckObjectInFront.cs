@@ -109,7 +109,7 @@ public class CheckObjectInFront : MonoBehaviour
 
     private bool CheckIfDirectSibling(Collider collider)
     {
-        if (collider.gameObject == gameObject || collider.transform == parentToIgnore || siblingToIgnore.Contains(collider.transform))
+        if (collider.gameObject == this.gameObject || collider.transform == parentToIgnore || siblingToIgnore.Contains(collider.transform))
             return true;
 
 
