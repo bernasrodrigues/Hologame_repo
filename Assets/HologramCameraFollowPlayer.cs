@@ -6,10 +6,10 @@ public class HologramCameraFollowPlayer : MonoBehaviour
 {
 
     public GameObject planeHologram;
-    public GameObject placementPoint;
+    public GameObject viewingPoint;
     public Transform playerCamera;
 
-    Vector3 InitialOffset;
+    Vector3 InitialPositionOffset;
     Quaternion initialRotationOffset;
 
     // Start is called before the first frame update
@@ -18,16 +18,26 @@ public class HologramCameraFollowPlayer : MonoBehaviour
         playerCamera = WorldInfo.Instance.playerCameraTransform;
 
 
-        //InitialOffset = planeHologram.transform.position - playerCamera.position;
-
+        //InitialPositionOffset = this.transform.position - playerCamera.position - planeHologram.transform.position;
+        InitialPositionOffset = this.transform.position - viewingPoint.transform.position;
         //this.transform.position -= InitialOffset;
 
-        Vector3 rotationOffset = new Vector3(0, 90, 0);
-        initialRotationOffset = Quaternion.Inverse(playerCamera.rotation) * transform.rotation;
-        initialRotationOffset *= Quaternion.Euler(0, -90, 0); ;
+        //initialRotationOffset = Quaternion.Inverse(playerCamera.rotation) * this.transform.rotation;
+        //initialRotationOffset = Quaternion.Euler(0, -90, 0); ;
+        //transform.rotation = playerCamera.rotation * initialRotationOffset;
 
-        print(playerCamera.rotation);
-        print(transform.rotation);
+
+
+
+
+
+
+        initialRotationOffset = planeHologram.transform.rotation * playerCamera.rotation;
+
+
+
+
+        print(InitialPositionOffset);
     }
 
     // Update is called once per frame
@@ -39,7 +49,18 @@ public class HologramCameraFollowPlayer : MonoBehaviour
         //this.transform.SetPositionAndRotation(m.GetColumn(3), m.rotation);
         //this.transform.LookAt(placementPoint.transform);
 
-        transform.rotation = playerCamera.rotation * initialRotationOffset;
+        transform.rotation = initialRotationOffset * playerCamera.transform.rotation ;
+
+
+        
+        //Vector3 moveVector = playerCamera.position;
+        //moveVector = Vector3.Cross(playerCamera.position, initialRotationOffset.eulerAngles);
+        //moveVector += InitialPositionOffset;
+
+        //Vector3 moveVector = (playerCamera.position + InitialPositionOffset);
+        //moveVector = Vector3.Cross(moveVector, Vector3.up);
+
+        //transform.position =moveVector;
 
     }
 }

@@ -15,9 +15,22 @@ public class ObjectCopyPlacer : MonoBehaviour
     public GameObject RendererCamera;
 
 
-
-
     public CheckObjectInFront debugCheckObjectInFront;
+
+
+    private static ObjectCopyPlacer instance;
+    private ObjectCopyPlacer() { } // Private constructor to prevent instantiation.
+    public static ObjectCopyPlacer Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new ObjectCopyPlacer();
+            }
+            return instance;
+        }
+    }
 
 
 
@@ -31,15 +44,14 @@ public class ObjectCopyPlacer : MonoBehaviour
         }
 
         */
+
+
+
     }
 
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            PlaceCopy(debugCheckObjectInFront.detectedObjects);
-        };
 
 
     }
@@ -61,10 +73,10 @@ public class ObjectCopyPlacer : MonoBehaviour
             GameObject copy = Instantiate(detectedObject.Item1.gameObject, targetPosition.position, targetPosition.rotation );
 
 
-
+            
             try
             {
-                Rigidbody rb = copy.GetComponent<Rigidbody>();
+                Rigidbody rb = copy.GetComponentInChildren<Rigidbody>();
                 rb.useGravity = false;
                 rb.freezeRotation = true;
                 rb.isKinematic = true;
