@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class LevelStepTriggerCheck : LevelSteps
 {
-    Trigger hitChecker;
-    public List<Trigger> triggerList = new List<Trigger>();
+    public List<ITrigger> triggerList = new List<ITrigger>();
 
-    public Dictionary<Trigger,bool> triggerCompletion = new Dictionary<Trigger, bool>();
+    public Dictionary<ITrigger,bool> triggerCompletion = new Dictionary<ITrigger, bool>();
 
-
-    public LevelStepsGuide levelStepsGuide;
-
+    public bool levelComplete = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Trigger t in triggerList)
-        {
-            t.completeTrigger.AddListener(CompleteTrigger);
-            t.removeTrigger.AddListener(RemoveTrigger);
-        }
 
     }
 
@@ -33,16 +25,34 @@ public class LevelStepTriggerCheck : LevelSteps
 
 
 
-    void CompleteTrigger(Trigger trigger)
+    public void CompleteTrigger(ITrigger trigger)
     {
-        levelStepsGuide.nextStep();
+        triggerCompletion[trigger] = true;
 
-        
-
+        if (CheckTriggerCompletion())
+        {
+            levelComplete = true;
+            print("Level complete");
+        }
     }
 
-    void RemoveTrigger(Trigger trigger)
+    public void RemoveTrigger(ITrigger trigger)
     {
-        //TODO
+        triggerCompletion[trigger] = false;
+    }
+
+
+
+    bool CheckTriggerCompletion()
+    {
+        foreach (ITrigger t in triggerCompletion.Keys)
+        {
+            if (triggerCompletion[t]== false)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

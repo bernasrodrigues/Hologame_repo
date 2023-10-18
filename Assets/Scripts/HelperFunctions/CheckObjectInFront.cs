@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 //CheckObjectInFront
 
@@ -25,9 +26,13 @@ public class CheckObjectInFront : MonoBehaviour
 
     private void Update()
     {
+
         CheckFrontObjects();
 
-        
+        foreach (var obj in detectedObjects)
+        {
+            print(obj);
+        }
     }
 
 

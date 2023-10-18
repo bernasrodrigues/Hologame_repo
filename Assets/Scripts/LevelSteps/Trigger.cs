@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 using UnityEngine.Events;
 
-public abstract class Trigger : MonoBehaviour
+public interface ITrigger
 {
-    public UnityEvent<Trigger> completeTrigger;
-    public UnityEvent<Trigger> removeTrigger;
+    
 }
