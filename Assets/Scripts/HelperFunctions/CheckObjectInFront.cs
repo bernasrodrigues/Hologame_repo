@@ -9,7 +9,7 @@ public class CheckObjectInFront : MonoBehaviour
     public float detectionAngle = 30f; // Angle in degrees
     public float detectionRadius = 5f; // Radius within which objects will be detected
 
-    public HashSet<(GameObject, Vector3)> detectedObjects = new HashSet<(GameObject , Vector3)>();
+    public HashSet<(GameObject, Vector3 )> detectedObjects = new HashSet<(GameObject , Vector3)>();
 
 
     private Transform parentToIgnore;

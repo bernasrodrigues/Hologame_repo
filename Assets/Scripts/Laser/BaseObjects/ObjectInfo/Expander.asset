@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f38429bf36fb4e4cbcd08e77c665dc5, type: 3}
   m_Name: Expander
   m_EditorClassIdentifier: 
-  objectName: 
-  description: 
+  objectName: Laser Expander
+  description: Expands a laser beam increasing the area it iluminates
+  tag: 0

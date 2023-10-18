@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f38429bf36fb4e4cbcd08e77c665dc5, type: 3}
   m_Name: BeamSplitter
   m_EditorClassIdentifier: 
-  objectName: BeamSplliter
-  description: 
+  objectName: Beam Spliter
+  description: Splits an incoming laser beam in two, thus creating 2 laser beams
+  tag: 3

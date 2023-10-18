@@ -22,19 +22,19 @@ public class Level1Step9 : LevelSteps
         {
             if (baseObject.objectInfo != null)
             {
-                if (baseObject.objectInfo.tag == Tag.BeamSplitter)
+                if (baseObject.objectInfo.tag == ObjectInfoTag.BeamSplitter)
                 {
                     beamSplitterInTable = true;
                 }
-                else if (baseObject.objectInfo.tag == Tag.Mirror)
+                else if (baseObject.objectInfo.tag == ObjectInfoTag.Mirror)
                 {
                     mirrorInTable = true;
                 }
-                else if (baseObject.objectInfo.tag == Tag.LaserEmitter)
+                else if (baseObject.objectInfo.tag == ObjectInfoTag.LaserEmitter)
                 {
                     laserInTable = true;
                 }
-                else if (baseObject.objectInfo.tag == Tag.Expander)
+                else if (baseObject.objectInfo.tag == ObjectInfoTag.Expander)
                 {
                     expanderInTable = true;
                 }
@@ -59,19 +59,19 @@ public class Level1Step9 : LevelSteps
         {
             if (baseObject.objectInfo != null)
             {
-                if (baseObject.objectInfo.tag == Tag.BeamSplitter)
+                if (baseObject.objectInfo.tag == ObjectInfoTag.BeamSplitter)
                 {
                     beamSplitterInTable = false;
                 }
-                else if (baseObject.objectInfo.tag == Tag.Mirror)
+                else if (baseObject.objectInfo.tag == ObjectInfoTag.Mirror)
                 {
                     mirrorInTable = false;
                 }
-                else if (baseObject.objectInfo.tag == Tag.LaserEmitter)
+                else if (baseObject.objectInfo.tag == ObjectInfoTag.LaserEmitter)
                 {
                     laserInTable = false;
                 }
-                else if (baseObject.objectInfo.tag == Tag.Expander)
+                else if (baseObject.objectInfo.tag == ObjectInfoTag.Expander)
                 {
                     expanderInTable = false;
                 }

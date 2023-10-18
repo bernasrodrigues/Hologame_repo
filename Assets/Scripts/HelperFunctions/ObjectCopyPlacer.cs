@@ -48,21 +48,20 @@ public class ObjectCopyPlacer : MonoBehaviour
 
     public void PlaceCopy(HashSet<(GameObject, Vector3)> detectedObjects)
     {
-        
-
-
 
         // Create copies of the detected objects
         foreach ((GameObject, Vector3) detectedObject in detectedObjects)
         {
+
+            
 
 
             GameObject copy = Instantiate(detectedObject.Item1, targetPosition.position, targetPosition.rotation );
 
 
             
-            try
-            {
+            try                                                                     // disable rigidbody component
+            {                                                               
                 Rigidbody rb = copy.GetComponentInChildren<Rigidbody>();
                 rb.useGravity = false;
                 rb.freezeRotation = true;
@@ -71,28 +70,21 @@ public class ObjectCopyPlacer : MonoBehaviour
 
             } catch (MissingComponentException)
             {
-                continue;
+                
             }
 
 
-
-
-
-            foreach (Component component in copy.GetComponents<Component>())
+            foreach (MonoBehaviour c in copy.GetComponentsInChildren<MonoBehaviour>())        // disable all scripts
             {
-                // Check if it's not a MeshRenderer or MeshFilter
-                if (!(component is MeshRenderer || component is MeshFilter || component is Transform))
-                {
-                    // Add the component to the list of components to destroy
-                    DestroyImmediate(component);
-                }
+                c.enabled = false;
             }
 
 
 
 
 
-            copy.transform.position += detectedObject.Item2;
+
+            copy.transform.position += detectedObject.Item2;                        // move into position
             
 
 
@@ -105,7 +97,10 @@ public class ObjectCopyPlacer : MonoBehaviour
 
             //RendererCamera.transform.SetParent(playerCamera.transform.parent);
         }
+        
+
+       
     }
 
 
-}
+    }

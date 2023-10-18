@@ -5,16 +5,17 @@ public class ObjectInfo : ScriptableObject
 {
     public string objectName;
     public string description;
-    public Tag tag;
+    public ObjectInfoTag tag;
 }
 
-public enum Tag
+public enum ObjectInfoTag
 {
     Expander,
     Mirror,
     Goal,
     BeamSplitter,
     LaserEmitter,
+    ObjectHolder,
     Other,
 
 

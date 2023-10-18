@@ -20,13 +20,11 @@ public class ShootLaser : MonoBehaviour
     public float timer = -1;
 
 
-    public UnityEvent<float> RemaingTimeUpdate;
+    public UnityEvent<float> RemaingTimeUpdate;         // To signal the remaing time to the countdown timer
 
 
     //Handle Layers
     public string[] layersItCanCollide;     // List the layers the laser can collide with
-
-    public LaserEvents LaserEventType;
 
 
     // Update is called once per frame

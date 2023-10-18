@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   objectName: Laser
-  description: 
+  description: Creates a laser beam
+  tag: 4

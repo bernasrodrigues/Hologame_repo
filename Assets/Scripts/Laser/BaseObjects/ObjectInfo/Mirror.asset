@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Mirror
   m_EditorClassIdentifier: 
   objectName: Mirror
-  description: 
+  description: A Reflective mirror, reflects a laser beam trought the normal angle
+  tag: 1
