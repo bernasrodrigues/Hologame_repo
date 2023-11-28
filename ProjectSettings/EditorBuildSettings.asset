@@ -8,12 +8,30 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Assets/XRI_Examples/Scenes/XRI_Examples_Main.unity
     guid: ba755f5a181505a4799b21685d4c7576
-  - enabled: 0
-    path: Assets/Level 1.unity
+  - enabled: 1
+    path: Assets/Levels/SandBox.unity
+    guid: 1ffa62bc3513b89438e6a21fb1dcd905
+  - enabled: 1
+    path: Assets/Levels/Puzzle/Reflection level 1.unity
+    guid: f9b551f5418841a44b866bf664e62a76
+  - enabled: 1
+    path: Assets/Levels/Puzzle/Reflection level 2.unity
+    guid: 34d8cc4b9d614cf4d8f90f4471ccce0f
+  - enabled: 1
+    path: Assets/Levels/Puzzle/Reflection level 3.unity
+    guid: 037d7c430a02d4e4d91f22de446dcb27
+  - enabled: 1
+    path: Assets/Levels/Puzzle/Reflection level 4.unity
+    guid: d083e32f663405e458f95f376bae1961
+  - enabled: 1
+    path: Assets/Levels/Learning/Level 1.unity
     guid: f1978e0c0cf2b9f41bec2bbb45cffc8a
   - enabled: 1
-    path: Assets/SandBox.unity
-    guid: 1ffa62bc3513b89438e6a21fb1dcd905
+    path: Assets/Levels/Learning/Level 2.unity
+    guid: 5687f2be601a5954c958b598b499f875
+  - enabled: 1
+    path: Assets/Levels/Learning/Level 3.unity
+    guid: 5de13822116dc8a48ae7cdbe399df14a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e7b6cf70c80d6634799bd6c8ea8a47ff, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fba6072275013e6448e381f83d131b7f, type: 2}
