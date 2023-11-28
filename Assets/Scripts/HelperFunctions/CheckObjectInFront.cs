@@ -29,10 +29,6 @@ public class CheckObjectInFront : MonoBehaviour
 
         CheckFrontObjects();
 
-        foreach (var obj in detectedObjects)
-        {
-            print(obj);
-        }
     }
 
 

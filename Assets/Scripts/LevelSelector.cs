@@ -4,10 +4,6 @@ using UnityEngine.SceneManagement;
 public class LevelSelector : MonoBehaviour
 {
 
-    Scene scene;
-
-
-
     public void LoadLevel(string name)
     {
         Debug.Log("Loading level:" + name);

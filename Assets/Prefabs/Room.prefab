@@ -22077,6 +22077,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 7382366679960503217, guid: d9c5962a30fea7d4d994acdfddacf2ca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382366679960503217, guid: d9c5962a30fea7d4d994acdfddacf2ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -159
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c5962a30fea7d4d994acdfddacf2ca, type: 3}
 --- !u!4 &5567519085542206159 stripped
