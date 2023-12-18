@@ -6,7 +6,9 @@ using UnityEngine.Events;
 
 public class DelayedTriggerBaseObject : BaseObject, ITrigger
 {
-
+    public Material notOn;
+    public Material On;
+    public MeshRenderer meshRenderer;
     public float timeTillFill;
     public float currentTimeHitByRay;
 
@@ -53,12 +55,14 @@ public class DelayedTriggerBaseObject : BaseObject, ITrigger
             isHitByRay = true;
             currentTimeHitByRay = timeTillFill;
             levelStepTriggerCheck.CompleteTrigger(this);
+            meshRenderer.material = On;
+            
         }
         else
         {
             isHitByRay = false;
             levelStepTriggerCheck.RemoveTrigger(this);
-
+            meshRenderer.material = notOn;
         }
 
 
